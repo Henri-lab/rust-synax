@@ -1,0 +1,22 @@
+[package]
+name = "synax"
+version = "0.1.0"
+edition = "2021"
+
+[profile.dev]
+opt-level = 0
+debug = true
+debug-assertions = true
+overflow-checks = true
+lto = false
+panic = 'unwind'
+incremental = true
+codegen-units = 256
+rpath = false
+
+[dependencies]
+crossbeam = "0.8.4"
+quote = "1.0.40"
+serde_json = "1.0.143"
+syn = "2.0.106"
+tokio = "1.47.1"
