@@ -28,6 +28,10 @@ pub mod ex17;  // 宏系统和代码生成
 pub mod ex18;  // 异步编程async/await
 pub mod ex19;  // 文件I/O和路径操作
 pub mod ex20;  // 测试框架和文档测试
+
+//自由探索
+pub mod ex21;  // 内存分配和unsafe
+pub mod ex22;  // 自定义智能指针和Drop
 #[derive(Debug)]
 // 定义事件监听器结构体
 struct EventListener {

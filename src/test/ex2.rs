@@ -8,9 +8,7 @@ fn func(x: i32) -> i32 {
 }
 
 pub fn main() {
-    let fun2= |x: i32| -> i32 {
-        x + 1
-    };
+    let fun2 = |x: i32| -> i32 { x + 1 };
     let result = func(X);
     let result2 = fun2(X);
     println!("Result: {}", result);
@@ -25,6 +23,31 @@ pub fn main() {
 
     // 尝试访问 `my_string` 会报错，因为所有权已经移动了
     // println!("Outside closure: {}", my_string); // 编译错误！
+    // println!("result:{}",result);
+    main2();
 
     move_closure();
+}
+static a: i32=1;
+// 通过宏自动派生（derive）Clone 和 Copy trait
+#[derive(Clone, Copy)]
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+fn main2() {
+    let p1 = Point { x: 1, y: 2 };
+
+    // 赋值时，p1 的值被复制到了 p2
+    let mut p2 = p1;
+    let clone = p1.clone();
+    println!("p2: ({}, {})", p2.x, p2.y);
+    p2 = clone;
+
+    println!("p2: ({}, {})", p2.x, p2.y);
+    // p1 仍然有效，因为 Point 实现了 Copy
+    println!("p1: ({}, {})", p1.x, p1.y);
+
+    // 如果 Point 没有实现 Copy，这行代码会报错
 }

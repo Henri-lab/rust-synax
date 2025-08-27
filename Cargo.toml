@@ -3,6 +3,9 @@ name = "synax"
 version = "0.1.0"
 edition = "2021"
 
+[lints.rust]
+warnings = "allow"
+
 [profile.dev]
 opt-level = 0
 debug = true
